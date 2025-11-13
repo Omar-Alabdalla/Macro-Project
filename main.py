@@ -11,14 +11,14 @@ height = float(input("Height (in cm): "))
 weight = float(input("Weight (in kg): "))
 
 def MacroCalculation(age, gender, height, weight):
-    if gender == 0:
+    if gender == 0: #0 signifies male calculation separate BMR equations
         bmr = 88.362 + (13.397 * weight) + (4.799 * height) - (5.677 * age)
-    else:
+    else: #else is for female calculation separate BMR equations
         bmr = 447.593 + (9.247 * weight) + (3.098 * height) - (4.330 * age)
-    protein = weight * 2.2
+    protein = weight * 2.2 
     fats = (bmr * 0.25) / 9
     carbs = (bmr - (protein * 4) - (fats * 9)) / 4
-    return bmr, protein, fats, carbs
+    return bmr, protein, fats, carbs # Returns the variables to be used accordingly.
 
 print("\nCalculating your daily macronutrient needs...\n")
 bmr, protein, fats, carbs = MacroCalculation(age, gender, height, weight)
